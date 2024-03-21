@@ -170,4 +170,4 @@ int main() {
     return 0;
 }
 
-//se ejecuto solo un algoritmo a la vez
+//se ejecuto solo un algoritmo a la vez y el numero de elementos del array vario segun cada intento
