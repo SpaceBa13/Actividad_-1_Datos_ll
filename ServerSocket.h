@@ -29,6 +29,16 @@ private:
     Data* carpeta_de_canciones;
     bool active_playlist;
 
+    //Recibe los datos y los convierte a formato json
+    json receiveJsonData(int clientSocket);
+    //Envia la respuesta al cliente (exitoso o no)
+    void send_response(string command, string status, int clientsocket);
+    //Pone al servidor en modo de escucha
+    void acceptConnections();
+    //Envia la respuesta al cliente (lista de canciones)
+    void send_response(string command, string status, int clientsocket, string list);
+    //Construye una lista con las canciones de la carpeta de lectura
+
 public:
     DoubleList get_list(){return lista_enlazada}
 
@@ -44,18 +54,8 @@ public:
 
     bool get_playlist_state(){return active_playlist;}
 
-
-    //Recibe los datos y los convierte a formato json
-    json receiveJsonData(int clientSocket);
-    //Envia la respuesta al cliente (exitoso o no)
-    void send_response(string command, string status, int clientsocket);
-    //Pone al servidor en modo de escucha
-    void acceptConnections();
-    //Envia la respuesta al cliente (lista de canciones)
-    void send_response(string command, string status, int clientsocket, string list);
-    //Construye una lista con las canciones de la carpeta de lectura
     void create_list_from_file();
-    //
+
     void create_queue();
 
 
