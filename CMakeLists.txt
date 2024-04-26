@@ -4,7 +4,4 @@ project(untitled)
 set(CMAKE_CXX_STANDARD 17)
 
 add_executable(untitled main.cpp
-        Pagina.h
-        Cancion.h
-        INIReader.h
 )
